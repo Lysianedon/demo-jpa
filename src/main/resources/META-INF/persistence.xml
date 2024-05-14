@@ -46,9 +46,11 @@
     <class>banque.entites.Banque</class>
     <class>banque.entites.Client</class>
     <class>banque.entites.Compte</class>
+    <class>banque.entites.Operation</class>
     <class>banque.entites.LivretA</class>
 
     <properties>
+	<property name="exclude-unlisted-classes" value="true" />
     <!-- Unable autodetection of @Entity classes    -->
         <property name="hibernate.archive.autodetection" value="" />
         
