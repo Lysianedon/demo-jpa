@@ -43,9 +43,9 @@ public class Compte {
 		this.numero = numero;
 		this.solde = solde;
 	}
-	
+
 	public Compte(String numero, double solde, Set<Client> clients) {
-		
+
 		this.numero = numero;
 		this.solde = solde;
 		this.clients = clients;
@@ -59,9 +59,8 @@ public class Compte {
 		this.operations = operations;
 	}
 
-	
 //	----------- Getters and setters ----------- :
-	
+
 	public String getNumero() {
 		return numero;
 	}
@@ -97,8 +96,5 @@ public class Compte {
 	public Integer getId() {
 		return id;
 	}
-
-	
-	
 
 }

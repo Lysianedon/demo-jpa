@@ -43,17 +43,14 @@ public class Client {
 	private Banque banque;
 
 	@ManyToMany
-	@JoinTable(name="CLIENT_COMPTE",
-	joinColumns= @JoinColumn(name="ID_CLI", referencedColumnName="ID"),
-	inverseJoinColumns= @JoinColumn(name="ID_CTE", referencedColumnName="ID")
-	 )
+	@JoinTable(name = "CLIENT_COMPTE", joinColumns = @JoinColumn(name = "ID_CLI", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_CTE", referencedColumnName = "ID"))
 	private Set<Compte> comptes;
 
 //	----------- Constructors -----------:
 	public Client() {
 
 	}
-	
+
 	public Client(String nom, String prenom, LocalDate dateNaissance, Adresse adresse, Banque banque) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -99,7 +96,7 @@ public class Client {
 		return id;
 	}
 
-//	To String:
+//----------------	To String ----------------:
 	@Override
 	public String toString() {
 		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance
