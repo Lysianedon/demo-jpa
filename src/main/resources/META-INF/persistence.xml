@@ -34,50 +34,54 @@
 			<property name="jakarta.persistence.jdbc.driver"
 				value="org.mariadb.jdbc.Driver" />
 
-		
+
 			<property name="hibernate.show_sql" value="true" />
 			<property name=" hibernate.format_sql" value="true" />
 		</properties>
 	</persistence-unit>
-	
-	<persistence-unit name="banque" transaction-type="RESOURCE_LOCAL">
-    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-    <class>banque.entites.Banque</class>
-    <class>banque.entites.Client</class>
-    <class>banque.entites.Compte</class>
-    <class>banque.entites.Operation</class>
-    <class>banque.entites.LivretA</class>
+	<persistence-unit name="banque"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-    <properties>
-	<property name="exclude-unlisted-classes" value="true" />
-    <!-- Unable autodetection of @Entity classes    -->
-        <property name="hibernate.archive.autodetection" value="" />
-        
-        
-<!-- Enable generation of missing tables only    -->
-        <property name="hibernate.hbm2ddl.auto" value="update"/>
+		<class>banque.entites.Banque</class>
+		<class>banque.entites.Client</class>
+		<class>banque.entites.Compte</class>
+		<class>banque.entites.Operation</class>
+		<class>banque.entites.LivretA</class>
+		<class>banque.entites.AssuranceVie</class>
+		<class>banque.entites.Virement</class>
 
-<!-- Drop and Create at every relaunch    -->
-        <property name="jakarta.persistence.schema-generation.database.action"
-                  value="drop-and-create"/>
+		<properties>
+			<property name="exclude-unlisted-classes" value="true" />
+			<!-- Unable autodetection of @Entity classes -->
+			<property name="hibernate.archive.autodetection" value="" />
 
-		<!-- SQL request display  -->
-       		<property name="hibernate.show_sql" value="true" />
+
+			<!-- Enable generation of missing tables only -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<!-- Drop and Create at every relaunch -->
+			<property
+				name="jakarta.persistence.schema-generation.database.action"
+				value="drop-and-create" />
+
+			<!-- SQL request display -->
+			<property name="hibernate.show_sql" value="true" />
 			<property name=" hibernate.format_sql" value="true" />
 
-		<!-- Database access  -->
-     	<property name="jakarta.persistence.jdbc.url"
+			<!-- Database access -->
+			<property name="jakarta.persistence.jdbc.url"
 				value="jdbc:mariadb://bkovzcaij6zrycd0f9r0-mysql.services.clever-cloud.com:3306/bkovzcaij6zrycd0f9r0" />
 			<property name="jakarta.persistence.jdbc.user"
 				value="u5nbhjefkdknpxih" />
 			<property name="jakarta.persistence.jdbc.password"
 				value="m5X6i8EiuOvPLZgnT0iN" />
-      	<property name="jakarta.persistence.jdbc.driver"
+			<property name="jakarta.persistence.jdbc.driver"
 				value="org.mariadb.jdbc.Driver" />
-    </properties>
-</persistence-unit>
-	
-	
-	
+		</properties>
+	</persistence-unit>
+
+
+
 </persistence>
