@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+	version="3.1">
+	<persistence-unit name="demo-jpa">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mariadb://bhsi7tgei6cp3kpsqdgu-mysql.services.clever-cloud.com:3306/bhsi7tgei6cp3kpsqdgu" />
+			<property name="jakarta.persistence.jdbc.user"
+				value="uekxnrg3xqtehc0u" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="JWuSdfpV0x475r50AuMu" />
+			<property name="jakarta.persistence.jdbc.driver"
+				value="org.mariadb.jdbc.Driver" />
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name=" hibernate.format_sql" value="true" />
+		</properties>
+
+
+	</persistence-unit>
+	<persistence-unit name="bibliotheque">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mariadb://bfme8syucwmiv6lvcov2-mysql.services.clever-cloud.com:3306/bfme8syucwmiv6lvcov2" />
+			<property name="jakarta.persistence.jdbc.user"
+				value="umgdlbmjealnatmw" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="pMZVUROPBGtsME5koyt0" />
+			<property name="jakarta.persistence.jdbc.driver"
+				value="org.mariadb.jdbc.Driver" />
+
+		
+			<property name="hibernate.show_sql" value="true" />
+			<property name=" hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="banque">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mariadb://bkovzcaij6zrycd0f9r0-mysql.services.clever-cloud.com:3306/bkovzcaij6zrycd0f9r0" />
+			<property name="jakarta.persistence.jdbc.user"
+				value="u5nbhjefkdknpxih" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="m5X6i8EiuOvPLZgnT0iN" />
+			<property name="jakarta.persistence.jdbc.driver"
+				value="org.mariadb.jdbc.Driver" />
+				
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+				
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.archive.autodetection" value="" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name=" hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+	
+	
+</persistence>
