@@ -8,30 +8,33 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "COMPTE")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Compte {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
-	private Integer id;
+	protected Integer id;
 
 	@Column(name = "NUMERO")
-	private String numero;
+	protected String numero;
 
 	@Column(name = "SOLDE")
-	private double solde;
+	protected double solde;
 
 	@ManyToMany(mappedBy = "comptes")
-	private Set<Client> clients;
+	protected Set<Client> clients;
 
 	@OneToMany(mappedBy = "compte")
-	private Set<Operation> operations;
+	protected Set<Operation> operations;
 
 //	----------- Constructors -----------:
 	public Compte() {
@@ -39,7 +42,6 @@ public class Compte {
 	}
 
 	public Compte(String numero, double solde) {
-
 		this.numero = numero;
 		this.solde = solde;
 	}
@@ -95,6 +97,12 @@ public class Compte {
 
 	public Integer getId() {
 		return id;
+	}
+	//----------------	To String ----------------:
+
+	@Override
+	public String toString() {
+		return "Compte [id=" + id + ", numero=" + numero + ", solde=" + solde + "]";
 	}
 
 }

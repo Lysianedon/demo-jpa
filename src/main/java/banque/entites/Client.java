@@ -43,7 +43,7 @@ public class Client {
 	private Banque banque;
 
 	@ManyToMany
-	@JoinTable(name = "CLIENT_COMPTE", joinColumns = @JoinColumn(name = "ID_CLI", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_CTE", referencedColumnName = "ID"))
+	@JoinTable(name = "CLIENT_COMPTE_POSSESSION", joinColumns = @JoinColumn(name = "ID_CLI", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_CTE", referencedColumnName = "ID"))
 	private Set<Compte> comptes;
 
 //	----------- Constructors -----------:
@@ -57,6 +57,14 @@ public class Client {
 		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
 		this.banque = banque;
+	}
+	public Client(String nom, String prenom, LocalDate dateNaissance, Adresse adresse, Banque banque, Set<Compte> comptes) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.banque = banque;
+		this.comptes = comptes;
 	}
 
 //	----------- Getters and setters ----------- :
